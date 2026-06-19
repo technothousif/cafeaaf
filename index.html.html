@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cafe Management System</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f4f4;margin:0}
+header{background:#6f4e37;color:white;text-align:center;padding:15px}
+.container{width:90%;max-width:500px;margin:20px auto;background:white;padding:20px;border-radius:10px}
+.item{display:flex;justify-content:space-between;margin:10px 0}
+input{width:60px}
+button{width:100%;padding:12px;background:#6f4e37;color:white;border:none;margin-top:15px}
+#result{margin-top:20px;font-size:20px;text-align:center;font-weight:bold}
+</style>
+</head>
+<body>
+<header><h1>Sunrise Cafe Management System</h1></header>
+<div class="container">
+<h2>Menu</h2>
+<div class="item"><span>Coffee - ₹50</span><input type="number" id="coffee" value="0"></div>
+<div class="item"><span>Tea - ₹20</span><input type="number" id="tea" value="0"></div>
+<div class="item"><span>Sandwich - ₹80</span><input type="number" id="sandwich" value="0"></div>
+<div class="item"><span>Burger - ₹120</span><input type="number" id="burger" value="0"></div>
+<div class="item"><span>Pizza - ₹200</span><input type="number" id="pizza" value="0"></div>
+<div class="item"><span>French Fries - ₹90</span><input type="number" id="fries" value="0"></div>
+<div class="item"><span>Cold Coffee - ₹100</span><input type="number" id="coldcoffee" value="0"></div>
+<div class="item"><span>Ice Cream - ₹70</span><input type="number" id="icecream" value="0"></div>
+<div class="item"><span>Noodles - ₹110</span><input type="number" id="noodles" value="0"></div>
+<div class="item"><span>Soft Drink - ₹40</span><input type="number" id="softdrink" value="0"></div>
+<button onclick="calculateBill()">Generate Bill</button>
+<div id="result">Total Bill: ₹0</div>
+</div>
+<script>
+function calculateBill(){
+let total=0;
+total+=(parseInt(document.getElementById('coffee').value)||0)*50;
+total+=(parseInt(document.getElementById('tea').value)||0)*20;
+total+=(parseInt(document.getElementById('sandwich').value)||0)*80;
+total+=(parseInt(document.getElementById('burger').value)||0)*120;
+total+=(parseInt(document.getElementById('pizza').value)||0)*200;
+total+=(parseInt(document.getElementById('fries').value)||0)*90;
+total+=(parseInt(document.getElementById('coldcoffee').value)||0)*100;
+total+=(parseInt(document.getElementById('icecream').value)||0)*70;
+total+=(parseInt(document.getElementById('noodles').value)||0)*110;
+total+=(parseInt(document.getElementById('softdrink').value)||0)*40;
+document.getElementById('result').innerHTML='Total Bill: ₹'+total;
+}
+</script>
+</body>
+</html>
